@@ -20,7 +20,7 @@ defmodule RealTime.Application do
       # Start a worker by calling: RealTime.Worker.start_link(arg)
       # {RealTime.Worker, arg}
       # setup for clustering
-      {Cluster.Supervisor, [topologies, [name: HelloElixir.ClusterSupervisor]]}
+      {Cluster.Supervisor, [topologies, [name: RealTime.ClusterSupervisor]]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
