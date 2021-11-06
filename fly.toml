@@ -1,6 +1,6 @@
-# fly.toml file generated for holy-water-1260 on 2021-10-23T08:18:41+08:00
+# fly.toml file generated for wandering-fire-179 on 2021-11-07T01:44:30+08:00
 
-app = "holy-water-1260"
+app = "wandering-fire-179"
 
 kill_signal = "SIGTERM"
 kill_timeout = 5
@@ -9,7 +9,7 @@ processes = []
 [env]
 
 [deploy]
-  release_command = "/app/bin/real_time eval Release.migrate"
+  release_command = "/app/entry eval RealTime.Release.migrate"
 
 [experimental]
   allowed_public_ports = []

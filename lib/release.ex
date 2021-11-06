@@ -1,4 +1,4 @@
-defmodule Release do
+defmodule RealTime.Release do
   @moduledoc """
   Responsible for custom release commands
   """
