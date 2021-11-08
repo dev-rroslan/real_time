@@ -27,12 +27,17 @@ if config_env() == :prod do
 
   config :real_time, RealTimeWeb.Endpoint,
     server: true,
-    url: [host: "#{app_name}.fly.dev", port: 80],
+    url: [host: "#{app_name}.fly.dev"],
     http: [
       port: String.to_integer(System.get_env("PORT") || "4000"),
       # IMPORTANT: support IPv6 addresses
       transport_options: [socket_opts: [:inet6]]
     ],
+    check_origin: [
+      "https://'#{app_name}'.fly.dev",
+      "https://undionline.com"
+      ],
+
     secret_key_base: secret_key_base
 
   database_url =

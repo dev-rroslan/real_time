@@ -10,8 +10,13 @@ import Config
 # which you should run after static files are built and
 # before starting your production server.
 config :real_time, RealTimeWeb.Endpoint,
-  url: [host: "example.com", port: 80],
-  cache_static_manifest: "priv/static/cache_manifest.json"
+  url: [host: "undionline.com", port: 443],
+  cache_static_manifest: "priv/static/cache_manifest.json",
+  force_ssl: [
+    host: nil,
+    rewrite_on: [:x_forwarded_port, :x_forwarded_proto],
+    hsts: true, # maybe true when we use this for real
+]
 
 # Do not print debug messages in production
 config :logger, level: :info
