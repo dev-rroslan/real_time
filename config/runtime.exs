@@ -34,7 +34,7 @@ if config_env() == :prod do
       transport_options: [socket_opts: [:inet6]]
     ],
     check_origin: [
-      "https://'#{app_name}'.fly.dev",
+      "https://#{app_name}.fly.dev",
       "https://undionline.com"
       ],
 
