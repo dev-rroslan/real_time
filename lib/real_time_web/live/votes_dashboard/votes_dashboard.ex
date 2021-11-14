@@ -1,0 +1,7 @@
+defmodule RealTimeWeb.VotesDashboard do
+  use RealTimeWeb, :live_view
+  def mount(_params, _session, socket) do
+
+    {:ok, socket}
+  end
+end

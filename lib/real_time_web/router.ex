@@ -20,8 +20,16 @@ defmodule RealTimeWeb.Router do
   scope "/", RealTimeWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
-    live "/light", LightLive
+
+    live "/", LightLive
+    live "/page", PageLive, :index
+    live "/votes", VotesDashboard
+    live "/products", ProductLive.Index, :index
+    live "/products/new", ProductLive.Index, :new
+    live "/products/:id/edit", ProductLive.Index, :edit
+
+    live "/products/:id", ProductLive.Show, :show
+    live "/products/:id/show/edit", ProductLive.Show, :edit
 
 
 

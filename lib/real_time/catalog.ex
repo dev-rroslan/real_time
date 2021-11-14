@@ -1,12 +1,12 @@
-defmodule RealTime.Catalogs do
+defmodule RealTime.Catalog do
   @moduledoc """
-  The Catalogs context.
+  The Catalog context.
   """
 
   import Ecto.Query, warn: false
   alias RealTime.Repo
 
-  alias RealTime.Catalogs.Product
+  alias RealTime.Catalog.Product
 
   @doc """
   Returns the list of products.

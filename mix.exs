@@ -10,7 +10,8 @@ defmodule RealTime.MixProject do
       compilers: [:gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      releases: releases()
     ]
   end
 
@@ -20,7 +21,7 @@ defmodule RealTime.MixProject do
   def application do
     [
       mod: {RealTime.Application, []},
-      extra_applications: [:logger, :runtime_tools, :os_mon]
+      extra_applications: [:logger, :runtime_tools]
     ]
   end
 
@@ -57,6 +58,16 @@ defmodule RealTime.MixProject do
       {:sobelow, "~> 0.8", only: :dev},
       {:ecto_psql_extras, "~> 0.7"},
       {:libcluster, "~> 3.3"}
+
+    ]
+  end
+
+  defp releases() do
+    [
+      real_time: [
+        include_executables_for: [:unix],
+        cookie: "g9wPXQcyG9yLU2l3RdxnF19tsG79QQ0wePFwDQkqX8mfJ_6U7YDjpA=="
+      ]
     ]
   end
 

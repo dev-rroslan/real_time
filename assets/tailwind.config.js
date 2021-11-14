@@ -1,14 +1,26 @@
 module.exports = {
   mode: 'jit',
+  
   purge: [
+    
     './js/**/*.js',
-    '../lib/*_web/**/*.*ex'
+    '../lib/*_web/**/*.*ex',
+    '../lib/*_web/**/**/*.*ex',
+    
+    
+    
+   
+    
   ],
+  
   plugins: [
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
     require('daisyui'),
   ],
+  
+  
+  
   theme: {
     fontFamily: {
       sans: [
@@ -178,4 +190,5 @@ module.exports = {
       },
     }
   },
+  
 }
