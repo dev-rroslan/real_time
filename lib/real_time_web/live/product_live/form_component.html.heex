@@ -9,33 +9,33 @@
     phx-change="validate"
     phx-submit="save">
 
-    
+  
   <div data-theme="retro">
   <div class="form-control">
-    <label class="input-group">
+    <label class="input-group-sm">
     <span><%= label f, :name %></span>
-    <%= text_input f, :name, class: "w-full" %>
+    <%= text_input f, :name, class: "input-primary input-sm input-bordered" %>
     <%= error_tag f, :name %>
     </label>
   </div> 
   <div class="form-control">
-    <label class="input-group">
+    <label class="input-group-sm">
     <span><%= label f, :description %></span>
-    <%= text_input f, :description, class: "w-full" %>
+    <%= text_input f, :description, class: "input-primary input-sm input-bordered" %>
     <%= error_tag f, :description %>
     </label>
   </div>
   <div class="form-control">
-    <label class="input-group">
+    <label class="input-group-sm">
     <span><%= label f, :unit_price %></span>
-    <%= number_input f, :unit_price, step: "any", class: "w-full" %>
+    <%= number_input f, :unit_price, step: "any", class: "input-primary input-sm input-bordered" %>
     <%= error_tag f, :unit_price %>
     </label>
   </div>
   <div class="form-control">
-    <label class="input-group">
+    <label class="input-group-sm">
     <span><%= label f, :sku %></span>
-    <%= number_input f, :sku, class: "w-full" %>
+    <%= number_input f, :sku, class: "input-primary input-sm input-bordered" %>
     <%= error_tag f, :sku %>
     </label>
   </div>
@@ -45,4 +45,5 @@
     </div>
   </.form>
 </div>
+
 
