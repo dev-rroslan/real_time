@@ -58,6 +58,9 @@ defmodule RealTime.MixProject do
       {:sobelow, "~> 0.8", only: :dev},
       {:ecto_psql_extras, "~> 0.7"},
       {:libcluster, "~> 3.3"},
+      {:vega_lite, "~> 0.1.2"},
+      {:kino, "~> 0.3.1"}
+
 
 
     ]
