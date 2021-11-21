@@ -11,7 +11,7 @@ header {
 }
 
 h1 {
-  @apply text-center text-cool-gray-900 font-extrabold text-4xl mb-8;
+  @apply text-center text-cool-gray-900 font-semibold text-3xl mb-8;
 }
 
 ul.examples {
