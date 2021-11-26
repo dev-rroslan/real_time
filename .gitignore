@@ -35,3 +35,6 @@ npm-debug.log
 wg.conf
 *.livemd
 basic.conf
+
+# Ignore generated js hook files for components
+assets/js/_hooks/

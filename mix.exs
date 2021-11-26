@@ -7,7 +7,7 @@ defmodule RealTime.MixProject do
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: [:gettext] ++ Mix.compilers() ++ [:surface],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -27,6 +27,7 @@ defmodule RealTime.MixProject do
 
   # Specifies which paths to compile per environment.
   defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(:dev), do: ["lib"] ++ catalogues()
   defp elixirc_paths(_), do: ["lib"]
 
   # Specifies your project dependencies.
@@ -40,30 +41,30 @@ defmodule RealTime.MixProject do
       {:postgrex, ">= 0.15.13"},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.17.5"},
+      {:phoenix_live_view, "~> 0.16.0"},
       {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.6.1"},
+      {:phoenix_live_dashboard, "~> 0.5.3"},
       {:esbuild, "~> 0.3.4", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
-      {:jason, "~> 1.2"},
+      {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.5"},
-
-
+    
       # Additional packages
-
+    
       {:bcrypt_elixir, "~> 2.0"},
       {:credo, "~> 1.5", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.8", only: :dev},
       {:ecto_psql_extras, "~> 0.7"},
       {:libcluster, "~> 3.3"},
       {:vega_lite, "~> 0.1.2"},
-      {:kino, "~> 0.3.1"}
-
-
-
+      {:kino, "~> 0.3.1"},
+      {:sourceror, "~> 0.8.7"},
+      {:surface, "~> 0.6.1"},
+      {:surface_formatter, "~> 0.6.0"},
+      {:surface_catalogue, "~> 0.2.0"}
     ]
   end
 
@@ -89,6 +90,12 @@ defmodule RealTime.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.deploy": ["cmd --cd assets npm run deploy", "esbuild default --minify", "phx.digest"]
+    ]
+  end
+
+  def catalogues do
+    [
+      "priv/catalogue"
     ]
   end
 end

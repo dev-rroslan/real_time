@@ -1,6 +1,8 @@
 defmodule RealTimeWeb.Router do
   use RealTimeWeb, :router
 
+  import Surface.Catalogue.Router
+
   import RealTimeWeb.UserAuth
 
   pipeline :browser do
@@ -31,6 +33,7 @@ defmodule RealTimeWeb.Router do
     live "/products/:id", ProductLive.Show, :show
     live "/products/:id/show/edit", ProductLive.Show, :edit
     live "/guess", WrongLive
+    live "/demo", Demo
 
 
 
@@ -88,5 +91,12 @@ defmodule RealTimeWeb.Router do
     post "/users/confirm", UserConfirmationController, :create
     get "/users/confirm/:token", UserConfirmationController, :edit
     post "/users/confirm/:token", UserConfirmationController, :update
+  end
+
+  if Mix.env() == :dev do
+    scope "/" do
+      pipe_through :browser
+      surface_catalogue "/catalogue"
+    end
   end
 end

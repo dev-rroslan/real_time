@@ -46,6 +46,10 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :surface, :components, [
+  {Surface.Components.Form.ErrorTag, default_translator: {RealTimeWeb.ErrorHelpers, :translate_error}}
+]
+
 config :real_time, :env, Mix.env()
 
 # Import environment specific config. This must remain at the bottom

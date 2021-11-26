@@ -62,12 +62,14 @@ config :real_time, RealTimeWeb.Endpoint,
 
 # Watch static and templates for browser reloading.
 config :real_time, RealTimeWeb.Endpoint,
+  reloadable_compilers: [:gettext, :elixir, :surface],
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/real_time_web/(live|views)/.*(ex)$",
-      ~r"lib/real_time_web/templates/.*(eex)$"
+      ~r"lib/real_time_web/(live|views|components)/.*(ex|sface|js)$",
+      ~r"lib/real_time_web/templates/.*(eex)$",
+      ~r"priv/catalogue/.*(ex)$"
     ]
   ]
 
