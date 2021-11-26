@@ -35,7 +35,8 @@ if config_env() == :prod do
     ],
     check_origin: [
       "https://#{app_name}.fly.dev",
-      "https://undionline.com"
+      "https://undionline.com",
+      "https://www.undionline.com"
       ],
 
     secret_key_base: secret_key_base

@@ -9,6 +9,16 @@ defmodule RealTimeWeb.LightLive do
 
   def render(assigns) do
     ~L"""
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-213537139-1">
+    </script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-213537139-1');
+    </script>
     <h1>Front Porch Light</h1>
     <div id="light">
       <div class="meter">
